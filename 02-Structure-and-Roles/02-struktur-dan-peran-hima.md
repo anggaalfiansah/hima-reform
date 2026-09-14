@@ -18,7 +18,7 @@ Dokumen ini menetapkan fungsi dan batas tanggung jawab. Penempatan nama personel
 - Pengurus inti menjaga mandat, koordinasi, administrasi, dan keuangan.
 - Divisi menjaga fungsi operasional organisasi.
 - Anggota operasional ditempatkan pada divisi atau proyek berdasarkan kebutuhan, kapasitas, dan minat.
-- Program tidak berdiri sebagai divisi tersendiri. Perencanaan hingga pelaksanaan program merupakan mandat Divisi Strategis dengan dukungan divisi lain dan anggota operasional.
+- Program tidak berdiri sebagai divisi tersendiri. Perencanaan hingga pelaksanaan program merupakan mandat Divisi Perencanaan & Pengembangan Program dengan dukungan divisi lain dan anggota operasional.
 
 ## 3. Bentuk Struktur
 
@@ -36,26 +36,28 @@ graph TD
     Ketua --- Bendahara
 
     subgraph Divisi["DIVISI OPERASIONAL"]
-        DivKom["<b>Divisi Komunikasi Operasional</b><br/>Distribusi Pesan, Reminder & Kanal Grup"]
-        DivDKV["<b>Divisi DKV dan Media</b><br/>Identitas Visual, Publikasi & Dokumentasi"]
-        DivStrat["<b>Divisi Strategis</b><br/>Perencanaan, Konsep & Pelaksanaan Program"]
-        DivInternal["<b>Divisi Internal & Pemberdayaan Anggota</b><br/>Aktivasi Anggota, Penugasan & Kultur Kerja"]
+        DivAMI["<b>Divisi Administrasi & Media Informasi</b><br/>Distribusi Pesan, Reminder & Pengelolaan Kanal"]
+        DivMK["<b>Divisi Media & Kreatif</b><br/>Identitas Visual, Konten Sosmed & Publikasi"]
+        DivP3["<b>Divisi Perencanaan & Pengembangan Program</b><br/>Konsep Kegiatan, Rundown & Eksekusi Program"]
+        DivSDM["<b>Divisi Sumber Daya Manusia</b><br/>Pemetaan Minat, Alokasi Tugas & Monitoring Anggota"]
     end
 
-    WakilKetua -.->|"Koordinasi & Progres"| DivKom
-    WakilKetua -.->|"Koordinasi & Progres"| DivDKV
-    WakilKetua -.->|"Koordinasi & Progres"| DivStrat
-    WakilKetua -.->|"Koordinasi & Progres"| DivInternal
+    WakilKetua -.->|"Koordinasi & Progres"| DivAMI
+    WakilKetua -.->|"Koordinasi & Progres"| DivMK
+    WakilKetua -.->|"Koordinasi & Progres"| DivP3
+    WakilKetua -.->|"Koordinasi & Progres"| DivSDM
 
     subgraph Pool["POOL PELAKSANA"]
         AnggotaOp["<b>Anggota Operasional</b><br/>Penugasan pada Divisi / Tim Proyek Kerja"]
     end
 
-    DivKom --> AnggotaOp
-    DivDKV --> AnggotaOp
-    DivStrat --> AnggotaOp
-    DivInternal --> AnggotaOp
+    DivAMI --> AnggotaOp
+    DivMK --> AnggotaOp
+    DivP3 --> AnggotaOp
+    DivSDM --> AnggotaOp
 ```
+
+![Bagan Struktur Organisasi HIMA](./struktur-organisasi-hima-v0.0.1.png)
 
 ```text
 Ketua
@@ -64,10 +66,10 @@ Sekretaris
 Bendahara
 
 Divisi Operasional
-- Divisi Komunikasi Operasional
-- Divisi DKV dan Media
-- Divisi Strategis
-- Divisi Internal dan Pemberdayaan Anggota
+- Divisi Administrasi & Media Informasi
+- Divisi Media & Kreatif
+- Divisi Perencanaan & Pengembangan Program
+- Divisi Sumber Daya Manusia
 
 Anggota Operasional
 - Ditempatkan pada divisi atau ditugaskan pada proyek sesuai kebutuhan
@@ -107,7 +109,7 @@ Kepala divisi bertanggung jawab kepada Ketua dan Wakil Ketua sesuai jalur koordi
 - Memastikan hasil rapat berubah menjadi penugasan, tenggat, dan tindak lanjut.
 - Memantau progres kerja periodik serta mengeskalasi pekerjaan yang macet kepada Ketua.
 - Menjadi pengganti Ketua apabila Ketua berhalangan.
-- Bekerja bersama Divisi Internal dan Pemberdayaan Anggota untuk menjaga keterlibatan anggota.
+- Bekerja bersama Divisi Sumber Daya Manusia untuk menjaga keterlibatan anggota.
 
 **Bukan mandat utama:**
 
@@ -138,7 +140,7 @@ Kepala divisi bertanggung jawab kepada Ketua dan Wakil Ketua sesuai jalur koordi
 **Tanggung jawab:**
 
 - Mengelola kas, anggaran, pemasukan, pengeluaran, dan bukti transaksi.
-- Menyiapkan perencanaan anggaran untuk kegiatan bersama Divisi Strategis dan pihak terkait.
+- Menyiapkan perencanaan anggaran untuk kegiatan bersama Divisi Perencanaan & Pengembangan Program dan pihak terkait.
 - Menyimpan catatan keuangan serta menyusun laporan keuangan periodik.
 - Memberikan informasi kondisi anggaran untuk mendukung keputusan organisasi.
 - Menjaga penggunaan dana tetap dapat dipertanggungjawabkan.
@@ -150,75 +152,87 @@ Kepala divisi bertanggung jawab kepada Ketua dan Wakil Ketua sesuai jalur koordi
 
 ## 5. Divisi Operasional
 
-### Divisi Komunikasi Operasional
+### 5.1 Ringkasan Mandat Tiap Divisi
 
-**Mandat:** Memastikan informasi organisasi diteruskan secara cepat, jelas, tepat sasaran, dan dapat ditindaklanjuti.
+| Divisi | Fungsi Inti | Bentuk Kerja Nyata |
+|---|---|---|
+| **Administrasi & Media Informasi** | Memastikan informasi sampai, jelas, dan tidak terlambat | Share pengumuman, reminder rapat/tenggat, format pesan, pengelolaan kanal, follow-up informasi |
+| **Media & Kreatif** | Membentuk wajah dan jejak publik HIMA | Desain sertifikat, poster, banner, materi publikasi, konten sosmed, dokumentasi visual, ucapan hari besar |
+| **Perencanaan & Pengembangan Program** | Mengubah ide atau kebutuhan menjadi kegiatan yang siap jalan | Menyusun konsep kegiatan, tujuan, rundown, timeline, kebutuhan panitia, anggaran awal, risiko, dan evaluasi kegiatan |
+| **Sumber Daya Manusia** | Menyediakan dan mengelola orang yang menjalankan kegiatan | Mencari anggota pendukung, memetakan kemampuan/minat, membagi tugas, memantau keterlibatan, membantu mengatasi anggota yang pasif atau kewalahan |
+
+---
+
+### 5.2 Divisi Administrasi & Media Informasi
+
+**Mandat:** Memastikan informasi sampai, jelas, dan tidak terlambat, serta tata kelola administrasi operasional berjalan tertib.
 
 **Masalah yang dijawab:** Informasi dan reminder tidak berjalan konsisten sehingga komunikasi dapat diambil alih oleh pihak di luar HIMA.
 
 **Tanggung jawab:**
 
-- Meneruskan pengumuman, informasi kegiatan, dan pesan resmi melalui kanal yang ditetapkan.
+- Menyebarkan pengumuman, informasi kegiatan, dan pesan resmi melalui kanal yang ditetapkan.
 - Menjalankan reminder terhadap agenda, tenggat, rapat, pendaftaran, dan kebutuhan partisipasi.
 - Mengelola grup atau kanal komunikasi operasional bersama pengurus yang berwenang.
-- Memastikan informasi memuat tujuan, sasaran, tindakan yang diminta, tenggat, dan kontak penanggung jawab.
-- Mengumpulkan pertanyaan umum serta meneruskannya kepada pihak yang tepat.
-- Mencatat informasi penting yang perlu diarsipkan bersama Sekretaris.
+- Memastikan format pesan memuat tujuan, sasaran, tindakan yang diminta, tenggat, dan kontak penanggung jawab.
+- Menjalankan follow-up informasi serta mengumpulkan pertanyaan umum mahasiswa untuk diteruskan ke pihak yang tepat.
+- Mendukung tertib administrasi operasional dan mencatat informasi penting yang perlu diarsipkan bersama Sekretaris.
 
-**Batas peran:** Divisi ini mengelola distribusi dan tindak lanjut informasi. Desain visual dan produksi konten berada pada Divisi DKV dan Media.
+**Batas peran:** Divisi ini mengelola distribusi dan tindak lanjut informasi serta administrasi operasional. Desain visual dan produksi konten berada pada Divisi Media & Kreatif.
 
-### Divisi DKV dan Media
+### 5.3 Divisi Media & Kreatif
 
-**Mandat:** Membangun visibilitas HIMA melalui identitas visual, publikasi digital, dan dokumentasi media.
+**Mandat:** Membentuk wajah dan jejak publik HIMA melalui identitas visual, produksi konten kreatif, publikasi digital, dan dokumentasi media.
 
 **Masalah yang dijawab:** Sosial media tidak aktif, publikasi tidak jelas, dan keberadaan HIMA tidak terlihat secara konsisten.
 
 **Tanggung jawab:**
 
-- Membuat desain sertifikat, poster, banner, materi pengumuman, ucapan hari raya, dan kebutuhan visual organisasi.
+- Membuat desain sertifikat, poster, banner, materi publikasi, dan ucapan hari besar keagamaan/nasional.
 - Mengelola kalender konten, unggahan media sosial, serta publikasi digital HIMA.
 - Mendokumentasikan kegiatan dalam bentuk foto, video, atau materi visual sesuai kebutuhan.
 - Menjaga identitas visual, kualitas komunikasi publik, dan arsip materi publikasi.
-- Berkoordinasi dengan Divisi Komunikasi Operasional agar informasi yang dipublikasikan akurat dan tepat waktu.
+- Berkoordinasi dengan Divisi Administrasi & Media Informasi agar materi yang dipublikasikan akurat dan tepat waktu.
 
-**Batas peran:** Divisi ini memproduksi dan mengelola media. Keputusan substansi program berada pada Divisi Strategis, sedangkan distribusi pengumuman operasional berada pada Divisi Komunikasi Operasional.
+**Batas peran:** Divisi ini memproduksi dan mengelola media/konten visual. Keputusan substansi program berada pada Divisi Perencanaan & Pengembangan Program, sedangkan distribusi pengumuman operasional berada pada Divisi Administrasi & Media Informasi.
 
-### Divisi Strategis
+### 5.4 Divisi Perencanaan & Pengembangan Program
 
-**Mandat:** Menentukan arah program dan strategi HIMA, lalu mengelola perencanaan sampai pelaksanaan program.
+**Mandat:** Mengubah ide atau kebutuhan menjadi kegiatan yang siap jalan secara terukur dan terencana.
 
 **Masalah yang dijawab:** Organisasi bergerak reaktif, tidak memiliki arah program yang jelas, dan kegiatan tidak berjalan mandiri.
 
 **Tanggung jawab:**
 
 - Memetakan kebutuhan mahasiswa, peluang, masalah, dan prioritas organisasi.
-- Menyusun arah program, konsep kegiatan, target, serta ukuran hasil yang relevan.
-- Menentukan kebutuhan proyek: ruang lingkup, jadwal, personel, anggaran, risiko, dan kebutuhan komunikasi.
+- Menyusun konsep kegiatan, tujuan, target sasaran, dan indikator keberhasilan.
+- Menentukan kebutuhan proyek: ruang lingkup, rundown acara, timeline, kebutuhan kepanitiaan, anggaran awal, dan manajemen risiko.
 - Mengelola pelaksanaan program atau menunjuk koordinator proyek ketika diperlukan.
-- Berkoordinasi dengan Divisi Internal dan Pemberdayaan Anggota untuk kebutuhan personel serta pembagian tugas.
+- Berkoordinasi dengan Divisi Sumber Daya Manusia untuk kebutuhan personel serta pembagian tugas.
 - Berkoordinasi dengan Bendahara untuk perencanaan anggaran.
-- Berkoordinasi dengan Divisi Komunikasi Operasional untuk penyebaran informasi.
-- Berkoordinasi dengan Divisi DKV dan Media untuk publikasi dan dokumentasi.
-- Mengevaluasi hasil program dan mencatat pembelajaran bersama Sekretaris.
+- Berkoordinasi dengan Divisi Administrasi & Media Informasi untuk penyebaran informasi dan reminder.
+- Berkoordinasi dengan Divisi Media & Kreatif untuk materi publikasi dan dokumentasi.
+- Mengevaluasi hasil kegiatan dan mencatat pembelajaran bersama Sekretaris.
 
-**Batas peran:** Divisi Strategis memegang arah dan manajemen program, tetapi tidak harus menjadi pelaksana tunggal seluruh tugas teknis.
+**Batas peran:** Divisi ini memegang arah dan manajemen perencanaan program, tetapi tidak harus menjadi pelaksana tunggal seluruh tugas teknis.
 
-### Divisi Internal dan Pemberdayaan Anggota
+### 5.5 Divisi Sumber Daya Manusia
 
-**Mandat:** Memastikan anggota teridentifikasi, terlibat, mendapat penugasan yang jelas, dan berkembang sebagai bagian dari organisasi.
+**Mandat:** Menyediakan dan mengelola orang yang menjalankan kegiatan, serta menjaga anggota tetap terlibat dan berkembang.
 
 **Masalah yang dijawab:** Anggota dan tingkat keterlibatannya tidak jelas, pembagian tugas lemah, serta organisasi minim aksi karena personel tidak teraktivasi secara terarah.
 
 **Tanggung jawab:**
 
-- Bekerja bersama Sekretaris untuk menjaga daftar anggota, status keterlibatan, kapasitas, minat, dan ketersediaan anggota.
-- Mengaktifkan anggota melalui komunikasi internal, orientasi kerja dasar, dan keterlibatan dalam divisi atau proyek.
+- Bekerja bersama Sekretaris untuk menjaga daftar anggota, status keaktifan, kapasitas, minat, dan ketersediaan waktu anggota.
+- Mencari dan mengidentifikasi anggota pendukung untuk kebutuhan divisi maupun kepanitiaan program kerja.
+- Memetakan kemampuan dan minat anggota agar penempatan peran tepat sasaran (*role matching*).
 - Membantu pembagian tugas anggota berdasarkan kebutuhan program, kapasitas, dan minat.
-- Memantau keterlibatan anggota, mengidentifikasi hambatan, serta menyampaikan kebutuhan dukungan kepada Wakil Ketua.
+- Memantau keterlibatan anggota secara berkala, serta membantu mengatasi anggota yang pasif atau kewalahan (*workload balance*).
 - Membantu evaluasi kontribusi dan perkembangan anggota secara periodik.
 - Mendorong budaya kerja yang saling menghormati, dapat diandalkan, dan bertanggung jawab.
 
-**Batas peran:** Divisi ini mengelola keterlibatan dan penugasan anggota. Keputusan arah program tetap berada pada Divisi Strategis, sedangkan koordinasi kinerja lintas divisi berada pada Wakil Ketua.
+**Batas peran:** Divisi ini mengelola keterlibatan dan penugasan anggota. Keputusan arah program tetap berada pada Divisi Perencanaan & Pengembangan Program, sedangkan koordinasi kinerja lintas divisi berada pada Wakil Ketua.
 
 ## 6. Anggota Operasional
 
@@ -237,12 +251,12 @@ Anggota operasional adalah anggota organisasi yang mendukung pelaksanaan kerja d
 ```mermaid
 flowchart TD
     subgraph Inisiasi["1. Inisiasi & Konsep"]
-        A1["Kebutuhan / Aspirasi Mahasiswa"] --> A2["<b>Divisi Strategis</b><br/>Susun Konsep Program & Kebutuhan Proyek"]
+        A1["Kebutuhan / Aspirasi Mahasiswa"] --> A2["<b>Divisi Perencanaan & Pengembangan Program</b><br/>Susun Konsep, Rundown & Kebutuhan Proyek"]
     end
 
     subgraph Kesiapan["2. Penyiapan Sumber Daya"]
-        A2 --> B1["<b>Bendahara</b><br/>Perencanaan Anggaran"]
-        A2 --> B2["<b>Divisi Internal & Anggota</b><br/>Pemetaan Kapasitas & Alokasi Personel"]
+        A2 --> B1["<b>Bendahara</b><br/>Perencanaan Anggaran Awal"]
+        A2 --> B2["<b>Divisi Sumber Daya Manusia</b><br/>Pemetaan Minat & Alokasi Anggota Pendukung"]
     end
 
     subgraph Validasi["3. Validasi & Pengawasan"]
@@ -254,34 +268,34 @@ flowchart TD
     end
 
     subgraph Eksekusi["4. Eksekusi & Komunikasi"]
-        C3 --> D1["<b>Divisi Strategis + Anggota Proyek</b><br/>Pelaksanaan Kegiatan"]
-        D1 --> D2["<b>Divisi DKV dan Media</b><br/>Produksi Desain, Publikasi & Dokumentasi"]
-        D1 --> D3["<b>Divisi Komunikasi Operasional</b><br/>Distribusi Pengumuman, Reminder & Interaksi Grup"]
+        C3 --> D1["<b>Divisi Perencanaan & Pengembangan Program + Tim Panitia</b><br/>Pelaksanaan Kegiatan"]
+        D1 --> D2["<b>Divisi Media & Kreatif</b><br/>Produksi Desain, Publikasi & Dokumentasi Visual"]
+        D1 --> D3["<b>Divisi Administrasi & Media Informasi</b><br/>Distribusi Pesan, Reminder & Follow-up Kanal"]
     end
 
     subgraph Penutupan["5. Dokumentasi & Pembelajaran"]
         D1 --> E1["<b>Sekretaris</b><br/>Pencatatan Notulen, LPJ & Pengarsipan"]
         D1 --> E2["<b>Bendahara</b><br/>Rekapitulasi Keuangan & Bukti Transaksi"]
-        E1 --> E3["<b>Divisi Internal & Divisi Strategis</b><br/>Evaluasi Tim & Perekaman Pembelajaran"]
+        E1 --> E3["<b>Divisi SDM & Divisi Perencanaan & Pengemb. Prog.</b><br/>Evaluasi Tim, Evaluasi Kegiatan & Pembelajaran"]
     end
 ```
 
-1. Divisi Strategis mengidentifikasi kebutuhan dan menetapkan rancangan program atau proyek.
-2. Divisi Internal dan Pemberdayaan Anggota membantu menyiapkan serta membagi personel sesuai kebutuhan.
-3. Divisi Strategis mengoordinasikan pelaksanaan bersama anggota operasional dan divisi pendukung.
-4. Divisi Komunikasi Operasional menyebarkan informasi, reminder, dan tindak lanjut kepada sasaran yang tepat.
-5. Divisi DKV dan Media menyiapkan materi visual, publikasi, serta dokumentasi kegiatan.
-6. Sekretaris mencatat keputusan, penugasan penting, dan arsip hasil.
-7. Bendahara mengelola kebutuhan dan catatan keuangan.
-8. Wakil Ketua memantau progres lintas fungsi.
+1. Divisi Perencanaan & Pengembangan Program mengidentifikasi kebutuhan dan menyusun rancangan konsep, rundown, dan anggaran awal kegiatan.
+2. Divisi Sumber Daya Manusia memetakan anggota pendukung dan membagi tugas personel sesuai minat dan kapasitas.
+3. Divisi Perencanaan & Pengembangan Program mengoordinasikan pelaksanaan bersama tim panitia dan divisi pendukung.
+4. Divisi Administrasi & Media Informasi menyebarkan pengumuman, reminder, dan follow-up informasi melalui kanal yang tepat.
+5. Divisi Media & Kreatif menyiapkan materi publikasi visual, desain pendukung, serta dokumentasi kegiatan.
+6. Sekretaris mencatat notulen rapat, mengarsipkan berkas, dan mendukung administrasi LPJ.
+7. Bendahara mengelola kebutuhan, pencatatan kas, dan laporan keuangan kegiatan.
+8. Wakil Ketua memantau progres lintas fungsi dan mengatasi hambatan operasional.
 9. Ketua mengambil keputusan atau eskalasi yang bersifat strategis.
 
 ## 8. Ketentuan Kapasitas dan Perangkapan
 
 - Struktur ini menetapkan fungsi minimum, bukan kewajiban untuk langsung memiliki banyak jabatan atau kepala divisi.
 - Jika SDM belum cukup, satu orang dapat memegang lebih dari satu fungsi selama penugasan, batas tanggung jawab, dan kapasitasnya dicatat secara terbuka.
-- Perangkapan yang paling mungkin pada fase awal adalah Divisi Komunikasi Operasional dengan Divisi DKV dan Media.
-- Wakil Ketua dapat mendampingi fungsi Divisi Internal dan Pemberdayaan Anggota hingga terdapat penanggung jawab khusus.
+- Perangkapan yang paling mungkin pada fase awal adalah Divisi Administrasi & Media Informasi dengan Divisi Media & Kreatif.
+- Wakil Ketua dapat mendampingi fungsi Divisi Sumber Daya Manusia hingga terdapat penanggung jawab khusus.
 - Perangkapan tidak boleh menghapus kewajiban fungsi.
 - Pekerjaan yang tidak mampu ditangani harus dieskalasi, disederhanakan, atau dijadwalkan ulang secara terbuka.
 
