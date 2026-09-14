@@ -61,19 +61,38 @@ SOP ini tidak menggantikan kanal resmi kampus. Organisasi bertindak sebagai pene
 
 ## 6. Alur kerja
 
-```text
-Informasi masuk
-      ↓
-Cek sumber, sasaran, dan kelengkapan
-      ↓
-Lengkapi data wajib bila perlu
-      ↓
-Buat draf sesuai template
-      ↓
-Perlu persetujuan?
- ├─ Tidak → Publikasi → Catat di log → Reminder/arsip
- └─ Ya    → Persetujuan → Publikasi → Catat di log → Reminder/arsip
+```mermaid
+flowchart TD
+    Start([Informasi Masuk]) --> CekData["Cek Sumber, Sasaran & Kelengkapan"]
+    
+    CekData --> IsLengkap{"Data Wajib Lengkap?"}
+    IsLengkap -- "Tidak" --> HubungiSumber["Ubah Status: Perlu Dilengkapi<br/>Hubungi Sumber / Narahubung"]
+    HubungiSumber --> CekData
+    
+    IsLengkap -- "Ya" --> BuatDraf["Susun Draf Pesan Sesuai Template"]
+    BuatDraf --> IsPerluApproval{"Perlu Persetujuan?<br/>(Sensitif / Atas Nama Institusi)"}
+    
+    IsPerluApproval -- "Ya" --> AjukanApproval["Ubah Status: Menunggu Persetujuan<br/>Kirim Draf ke Approver"]
+    AjukanApproval --> ApprovalDecision{"Disetujui?"}
+    
+    ApprovalDecision -- "Revisi / Ditolak" --> Evaluasi["Revisi Draf atau Dibatalkan"]
+    Evaluasi --> BuatDraf
+    
+    ApprovalDecision -- "Disetujui" --> Publikasi["Publikasi via Admin Kanal"]
+    IsPerluApproval -- "Tidak" --> Publikasi
+    
+    Publikasi --> CatatLog["Ubah Status: Terpublikasi<br/>Catat Waktu & Tautan Posting di Log"]
+    
+    CatatLog --> PostAction{"Aktivitas Lanjutan?"}
+    PostAction -- "Ada Tenggat" --> Reminder["Jadwalkan Reminder H-x"]
+    PostAction -- "Ada Perubahan / Batal" --> UpdateInfo["Kirim Pembaruan / Pembatalan"]
+    PostAction -- "Kegiatan Selesai" --> Arsip["Ubah Status: Diarsipkan<br/>Simpan Bukti & Evaluasi"]
+    
+    Reminder --> Arsip
+    UpdateInfo --> Arsip
+    Arsip --> Selesai([Selesai])
 ```
+
 
 ### 6.1 Penerimaan informasi
 
@@ -151,6 +170,23 @@ Setelah kegiatan atau tenggat selesai:
 
 ## 8. Status informasi
 
+```mermaid
+stateDiagram-v2
+    [*] --> Masuk: Informasi diterima
+    Masuk --> PerluDilengkapi: Data wajib belum lengkap
+    PerluDilengkapi --> Masuk: Berkas disusulkan/dilengkapi
+    Masuk --> MenungguPersetujuan: Butuh persetujuan khusus
+    Masuk --> Terpublikasi: Siap dipublikasikan
+    MenungguPersetujuan --> Terpublikasi: Disetujui
+    MenungguPersetujuan --> Dibatalkan: Ditolak / Dibatalkan
+    Terpublikasi --> Diperbarui: Ada perubahan/ralat
+    Terpublikasi --> Dibatalkan: Kegiatan dibatalkan
+    Terpublikasi --> Diarsipkan: Kegiatan/tenggat selesai
+    Diperbarui --> Diarsipkan: Masa berlaku berakhir
+    Dibatalkan --> Diarsipkan: Pengarsipan bukti
+    Diarsipkan --> [*]
+```
+
 | Status | Arti |
 |---|---|
 | `Masuk` | Informasi baru diterima dan belum diperiksa |
@@ -160,6 +196,7 @@ Setelah kegiatan atau tenggat selesai:
 | `Diperbarui` | Ada perubahan setelah publikasi awal |
 | `Dibatalkan` | Informasi/kegiatan tidak lagi berlaku |
 | `Diarsipkan` | Informasi telah selesai dan disimpan sebagai arsip |
+
 
 ## 9. Checklist sebelum publikasi
 

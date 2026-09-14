@@ -119,26 +119,77 @@ Berkas pengajuan minimal dapat mencakup:
 
 ### 7.1 Ringkasan alur
 
-```text
-Mahasiswa menyelesaikan KP dan laporan
-            ↓
-Mahasiswa mengajukan Seminar KP
-            ↓
-Admin/Koordinator memverifikasi kelengkapan
-            ↓
-Berkas lengkap?
- ├─ Tidak → Dikembalikan untuk dilengkapi
- └─ Ya    → Penetapan pembimbing/penguji dan jadwal
-                         ↓
-              Pengumuman/undangan seminar
-                         ↓
-                 Pelaksanaan Seminar KP
-                         ↓
-                  Penilaian dan berita acara
-                         ↓
-             Revisi laporan dan verifikasi revisi
-                         ↓
-            Nilai/status dicatat dan berkas diarsipkan
+```mermaid
+flowchart TD
+    subgraph Tahap1["1. Persiapan & Pengajuan"]
+        A1["Selesai KP & Susun Laporan"] --> A2["Isi FR-KP-SEM-001 & Unggah Berkas Lengkap"]
+        A2 --> A3(["Status: Diajukan"])
+    end
+
+    subgraph Tahap2["2. Verifikasi & Penjadwalan"]
+        A3 --> B1["Pemeriksaan Berkas Administratif & Akademik"]
+        B1 --> B2{"Berkas Lengkap & Layak?"}
+        B2 -- "Tidak" --> B3["Status: Perlu Dilengkapi<br/>Daftar Kekurangan Dikirim ke Mahasiswa"]
+        B3 --> A2
+        B2 -- "Ya" --> B4["Status: Layak Dijadwalkan"]
+        B4 --> B5["Penetapan Tanggal, Ruang/Platform & Dosen Penguji"]
+        B5 --> B6["Distribusi Undangan & Publikasi Pengumuman"]
+    end
+
+    subgraph Tahap3["3. Pelaksanaan & Penilaian"]
+        B6 --> C1["Sesi Seminar KP<br/>(Presentasi & Tanya Jawab)"]
+        C1 --> C2["Pengisian Formulir Penilaian (FR-KP-SEM-006)<br/>& Berita Acara (FR-KP-SEM-007)"]
+        C2 --> C3{"Hasil Evaluasi Penguji"}
+    end
+
+    subgraph Tahap4["4. Tindak Lanjut & Revisi"]
+        C3 -- "Lulus Tanpa Revisi" --> D1["Pengesahan Laporan Final"]
+        C3 -- "Seminar Ulang" --> D2["Perbaikan Mayor & Penjadwalan Ulang"]
+        D2 --> B5
+        C3 -- "Lulus dengan Revisi" --> D3["Pengerjaan Revisi oleh Mahasiswa<br/>(Maksimal Sesuai SLA)"]
+        D3 --> D4["Verifikasi Revisi oleh Pembimbing/Penguji"]
+        D4 --> D5{"Revisi Memenuhi Syarat?"}
+        D5 -- "Belum Sesuai" --> D3
+        D5 -- "Disetujui" --> D1
+    end
+
+    subgraph Tahap5["5. Pengarsipan & Penutupan"]
+        D1 --> E1["Perekaman Nilai Akhir ke Sistem Akademik"]
+        E1 --> E2["Pengarsipan Berkas Digital & Fisik"]
+        E2 --> E3(["Status: Selesai"])
+    end
+```
+
+#### Diagram Interaksi Antar-Peran
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor M as Mahasiswa
+    actor AD as Admin Prodi / Koordinator
+    actor D as Dosen Pembimbing & Penguji
+
+    M->>AD: Submit formulir & berkas pengajuan (FR-KP-SEM-001)
+    AD->>AD: Verifikasi kelengkapan administrasi & syarat akademik
+    alt Berkas Belum Lengkap
+        AD-->>M: Notifikasi kekurangan berkas (TPL-KP-SEM-002)
+        M->>AD: Unggah berkas perbaikan
+    end
+    AD->>D: Koordinasi ketersediaan jadwal & penguji
+    D-->>AD: Konfirmasi kesediaan jadwal
+    AD->>M: Kirim konfirmasi jadwal (TPL-KP-SEM-001)
+    AD->>D: Kirim undangan & draf laporan KP
+    Note over M,D: Pelaksanaan Seminar Kerja Praktik
+    M->>D: Presentasi laporan KP
+    D->>M: Tanya jawab & masukan perbaikan
+    D->>AD: Serahkan form penilaian & berita acara
+    alt Ada Revisi
+        AD->>M: Kirim catatan revisi (TPL-KP-SEM-003)
+        M->>D: Serahkan revisi laporan
+        D-->>AD: Pengesahan lembar revisi (FR-KP-SEM-009)
+    end
+    AD->>AD: Input nilai ke sistem & simpan arsip dokumen
+    AD-->>M: Informasi penutupan berkas (Status: Selesai)
 ```
 
 ### 7.2 Tahap 1 — Persiapan oleh mahasiswa
@@ -370,7 +421,31 @@ Terima kasih.
 
 ## 12. Log Pengajuan dan Jadwal Seminar KP
 
+### 12.1 Siklus Hidup Status Pengajuan
+
+```mermaid
+stateDiagram-v2
+    [*] --> Diajukan: Mahasiswa submit formulir & berkas
+    Diajukan --> PerluDilengkapi: Berkas belum lengkap / tidak valid
+    PerluDilengkapi --> Diajukan: Berkas disusulkan kembali
+    Diajukan --> MenungguPersetujuan: Validasi akademik pembimbing/koordinator
+    MenungguPersetujuan --> LayakDijadwalkan: Berkas & syarat disetujui
+    LayakDijadwalkan --> Terjadwal: Tanggal, ruang & penguji ditetapkan
+    Terjadwal --> Pelaksanaan: Sesi seminar berlangsung
+    Pelaksanaan --> LulusTanpaRevisi: Evaluasi penguji memuaskan
+    Pelaksanaan --> LulusDenganRevisi: Catatan perbaikan minor
+    Pelaksanaan --> SeminarUlang: Evaluasi perbaikan mayor
+    SeminarUlang --> LayakDijadwalkan: Jadwal ulang seminar
+    LulusDenganRevisi --> RevisiDisetujui: Revisi disahkan pembimbing/penguji
+    LulusTanpaRevisi --> Selesai: Rekap nilai & pengarsipan
+    RevisiDisetujui --> Selesai: Rekap nilai & pengarsipan
+    Selesai --> [*]
+```
+
+### 12.2 Struktur Data Log
+
 | Kolom | Keterangan |
+
 |---|---|
 | `seminar_id` | ID unik seminar, misalnya `KP-SEM-2026-001` |
 | `tanggal_pengajuan` | Tanggal/jam pengajuan diterima |
