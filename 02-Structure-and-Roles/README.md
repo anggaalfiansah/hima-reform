@@ -1,8 +1,10 @@
 # 02 - Structure & Roles
 
-Folder ini berisi arsitektur kepengurusan, bagan hierarki, pembagian departemen/divisi, matriks RACI, serta rincian peran (*job description*) dan tanggung jawab.
+Folder ini disiapkan khusus untuk rancangan arsitektur kepengurusan inti/minimum, bagan struktur organisasi HIMA, pembagian peran divisi, matriks RACI, serta rincian peran (*job description*) dan *role charter*.
 
-## Berkas Tersedia
+## Dokumen & Konten yang Direncanakan
 
-- `reorganisasi-hima.drawio`: File sumber diagram desain struktur organisasi HIMA (Draw.io).
-- `hima-reform-v0.0.1.png`: Pratinjau gambar bagan struktur organisasi HIMA Reform v0.0.1.
+- **Bagan Struktur Ramping**: Desain struktur organisasi fungsional berbasis beban kerja nyata.
+- **Role Charter / Job Description**: Definisi peran Ketua, Sekretaris, Bendahara, dan divisi-divisi operasional inti.
+- **Matriks RACI**: Penegasan siapa yang *Responsible*, *Accountable*, *Consulted*, dan *Informed* untuk tiap fungsi organisasi.
+- **Diagram Struktur Organisasi**: Diagram visual khusus hierarki & alur koordinasi pengurus.
