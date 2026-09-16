@@ -65,11 +65,14 @@ Wakil Ketua
 Sekretaris
 Bendahara
 
-Divisi Operasional
+Divisi Operasional (Fase Fondasi & Stabilisasi Internal)
 - Divisi Administrasi & Media Informasi
 - Divisi Media & Kreatif
 - Divisi Perencanaan & Pengembangan Program
 - Divisi Sumber Daya Manusia
+
+Divisi Opsional (Fase Ekspansi Lanjutan)
+- Divisi Relasi & Kemitraan (diaktifkan setelah fondasi internal terbukti stabil dan mandiri)
 
 Anggota Operasional
 - Ditempatkan pada divisi atau ditugaskan pada proyek sesuai kebutuhan
@@ -234,6 +237,24 @@ Kepala divisi bertanggung jawab kepada Ketua dan Wakil Ketua sesuai jalur koordi
 
 **Batas peran:** Divisi ini mengelola keterlibatan dan penugasan anggota. Keputusan arah program tetap berada pada Divisi Perencanaan & Pengembangan Program, sedangkan koordinasi kinerja lintas divisi berada pada Wakil Ketua.
 
+### 5.6 Divisi Relasi & Kemitraan (Fase Ekspansi Opsional)
+
+**Status:** Tidak aktif pada Fase 1 (Fondasi). Hanya dibentuk jika internal organisasi telah berjalan mandiri dan stabil.
+
+**Mandat:** Menginisiasi, merawat, dan mengelola kemitraan strategis dengan organisasi kemahasiswaan serumpun, ormawa lain, lembaga eksternal, dan komunitas teknologi.
+
+**Inisiatif yang dipersiapkan (Roadmap Lanjutan):**
+- **Tripartite Pact UNSIA**: Membangun aliansi dan forum kolaborasi teknologi mahasiswa lintas tiga prodi serumpun (HIMA Sistem Informasi, HIMA Informatika, dan HIMA Teknologi Informasi).
+- **Kemitraan Lintas Disiplin**: Penjajakan kolaborasi kegiatan dengan himpunan prodi lain (Akuntansi, Manajemen, Ilmu Komunikasi) untuk program yang membutuhkan irisan bisnis, tata kelola, dan publikasi.
+- **Kemitraan Eksternal**: Penjajakan peluang kolaborasi sponsor, komunitas industri IT, atau partisipasi delegasi lomba lintas kampus bersama Divisi Perencanaan & Pengembangan Program.
+
+**Prasyarat Pembentukan (*Activation Triggers*):**
+1. Operasional 4 divisi inti telah berjalan konsisten minimal 1 siklus kepengurusan/semester.
+2. Kehadiran komunikasi HIMA kepada mahasiswa Sistem Informasi sudah aktif, responsif, dan stabil.
+3. Kapasitas dan jumlah anggota operasional mencukupi tanpa mengorbankan beban kerja divisi inti.
+
+*Catatan:* Selama divisi ini belum diaktifkan, fungsi komunikasi dan koordinasi eksternal formal dijalankan langsung secara ad-hoc oleh **Ketua** dan **Wakil Ketua**.
+
 ## 6. Anggota Operasional
 
 Anggota operasional adalah anggota organisasi yang mendukung pelaksanaan kerja divisi dan proyek. Istilah ini digunakan untuk menegaskan bahwa setiap anggota mempunyai kontribusi nyata tanpa harus memegang jabatan pengurus inti atau kepala divisi.
@@ -296,6 +317,7 @@ flowchart TD
 - Jika SDM belum cukup, satu orang dapat memegang lebih dari satu fungsi selama penugasan, batas tanggung jawab, dan kapasitasnya dicatat secara terbuka.
 - Perangkapan yang paling mungkin pada fase awal adalah Divisi Administrasi & Media Informasi dengan Divisi Media & Kreatif.
 - Wakil Ketua dapat mendampingi fungsi Divisi Sumber Daya Manusia hingga terdapat penanggung jawab khusus.
+- Divisi Relasi & Kemitraan tidak boleh dibuka tergesa-gesa apabila 4 divisi fondasi belum memiliki alokasi anggota dan ritme kerja yang stabil.
 - Perangkapan tidak boleh menghapus kewajiban fungsi.
 - Pekerjaan yang tidak mampu ditangani harus dieskalasi, disederhanakan, atau dijadwalkan ulang secara terbuka.
 
