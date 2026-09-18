@@ -1,0 +1,14 @@
+# Evidence & chat logs civitas (Full ignore - UU PDP No. 27 Tahun 2022)
+01-Diagnosis/evidence/*.txt
+*.txt
+
+# OS metadata & temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor & IDE configs
+.vscode/
+.idea/
+*.swp
+*~
